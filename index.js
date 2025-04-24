@@ -1,9 +1,9 @@
 import express from "express";
 import { authRouter } from "./router/auth.js";
-import { configDotenv } from "dotenv";
+import dotenv from "dotenv";
 import { connectDB } from "./connect.js";
 import { todoRouter } from "./router/todo.js";
-configDotenv();
+dotenv.config();
 // Initializing a constant to use express
 // methods and create middlewares.
 const app = express();
