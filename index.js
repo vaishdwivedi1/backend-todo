@@ -12,6 +12,13 @@ app.use(express.json());
 app.use("/api", authRouter);
 app.use("/api", todoRouter);
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.get("/about", (req, res) => {
+  res.send("About route 🎉 ");
+});
 app.listen(8080, () => {
   console.log("server stated");
 });

@@ -6,7 +6,6 @@ export const authRouter = Router();
 
 // Login route
 authRouter.post("/login", async (req, res) => {
-  console.log(req, req.body);
 
   const { name, password } = req.body;
 
@@ -35,7 +34,6 @@ authRouter.post("/login", async (req, res) => {
 
 // Register route
 authRouter.post("/register", async (req, res) => {
-  console.log(req, req.body);
   const { name, password } = req.body;
 
   try {
@@ -46,7 +44,6 @@ authRouter.post("/register", async (req, res) => {
     const hashPassword = await bcrypt.hash(password, 10);
 
     await User.create({ name, password: hashPassword });
-    console.log(hashPassword);
     res.status(201).json("Registered successfully");
   } catch (error) {
     res.status(500).json("Something went wrong");
