@@ -4,9 +4,8 @@ import dotenv from "dotenv";
 import { connectDB } from "./connect.js";
 import { todoRouter } from "./router/todo.js";
 dotenv.config();
-// Initializing a constant to use express
-// methods and create middlewares.
-const app = express();
+
+export const app = express();
 connectDB();
 
 app.use(express.json());
