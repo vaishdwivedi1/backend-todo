@@ -9,8 +9,8 @@ export const app = express();
 connectDB();
 
 app.use(express.json());
-app.use("/api", authRouter);
-app.use("/api", todoRouter);
+app.use("/", authRouter);
+app.use("/", todoRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
