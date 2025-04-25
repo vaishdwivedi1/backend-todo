@@ -139,7 +139,7 @@ todoRouter.put("/updateTodo/:id", async (req, res) => {
 
     const todo = await Todo.findOneAndUpdate(
       { _id: id, user: user._id },
-      { task, isCompleted },
+      { task,  completed: isCompleted },
       { new: true, runValidators: true }
     );
 
